@@ -11,7 +11,7 @@ const AppVentas = () => {
   const [total, setTotal] = React.useState(0);
 
   React.useEffect(() => {
-    fetch("http://localhost:3000/api/products")
+    fetch("https://proyectofinalgrupo22.herokuapp.com/api/products")
       .then((res) => res.json())
       .then((data) => {
         setProductos(data);
@@ -59,7 +59,7 @@ const AppVentas = () => {
       cedulaCliente: cedula,
       valorTotalVenta: total,
     };
-    fetch("http://localhost:3000/api/ventas", {
+    fetch("https://proyectofinalgrupo22.herokuapp.com/api/ventas", {
       method: "POST",
       body: JSON.stringify(ventas),
       headers: {
