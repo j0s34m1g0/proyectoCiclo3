@@ -17,7 +17,7 @@ class AppBdVentas extends Component {
 
   addProducto(e) {
     if (this.state._id) {
-      fetch("https://proyectofinalgrupo22.herokuapp.com/api/ventas/" + this.state._id, {
+      fetch("http://localhost:3000/api/ventas/" + this.state._id, {
         method: "PUT",
         body: JSON.stringify(this.state),
         headers: {
@@ -48,7 +48,7 @@ class AppBdVentas extends Component {
   }
 
   obtenerVentas() {
-    fetch("https://proyectofinalgrupo22.herokuapp.com/api/ventas")
+    fetch("http://localhost:3000/api/ventas")
       .then((res) => res.json())
       .then((data) => {
         this.setState({ ventas: data, productoBackup: data });
@@ -57,7 +57,7 @@ class AppBdVentas extends Component {
 
   deleteVentas(id) {
     if (confirm("¿Está seguro de eliminar la Venta?")) {
-      fetch("https://proyectofinalgrupo22.herokuapp.com/api/ventas/" + id, {
+      fetch("http://localhost:3000/api/ventas/" + id, {
         method: "DELETE",
         headers: {
           Accept: "application/json",
@@ -74,7 +74,7 @@ class AppBdVentas extends Component {
   }
 
   editVentas(id) {
-    fetch("https://proyectofinalgrupo22.herokuapp.com/api/ventas/" + id)
+    fetch("http://localhost:3000/api/ventas/" + id)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
